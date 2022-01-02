@@ -1,1 +1,84 @@
-<p>header works!</p>
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home" routerLinkActive="active"
+        ><img class="navbar-logo" src="/assets/kinnisvarajutud_3.jpg" alt=""
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active"
+              >About</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Podcasts
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" routerLink="/podcasts">Latest</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/podcasts"
+                  >Most listened</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" routerLink="/podcasts">All podcasts</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="header-socials">
+    <a href="https://www.facebook.com/groups/359228128419094"
+      ><img src="/assets/facebook _icon.png" alt=""
+    /></a>
+    <a href="https://soundcloud.com/user-79516917"
+      ><img src="/assets/soundcloud_icon.png" alt=""
+    /></a>
+    <a href="https://open.spotify.com/show/0feO2mMq54gP2SpKYq4sfN"
+      ><img src="/assets/spotify_icon.png" alt=""
+    /></a>
+  </div>
+</header>
