@@ -1,0 +1,33 @@
+footer{
+  margin-top:auto;
+  background-color: rgb(112, 112, 112);
+  padding: 0.5rem;
+  color: white;
+}
+
+.footer-body{
+  width: 80%;
+  margin:auto;
+  display: flex;
+
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-body img {
+  height: 2rem;
+  // transition: all 0.7s ease;
+  opacity: 0.7;
+}
+
+.footer-body img:hover {
+  opacity: 1;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+}
