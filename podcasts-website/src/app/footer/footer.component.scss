@@ -1,43 +1,25 @@
-footer{
-  margin-top:auto;
-  background-color: rgb(112, 112, 112);
-  padding: 0.5rem;
-  color: white;
-}
-
-.footer-body{
-  width: 80%;
-  margin:auto;
-  display: flex;
-
-}
-
-.middle-section {
-  align-items: center;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
+footer {
+  background-color: rgb(60, 91, 121);
+  padding: 0.6rem;
+  color: rgb(245, 230, 217);
 }
 
 .socials img {
   height: 1.5rem;
   // transition: all 0.7s ease;
-  opacity: 0.7;
+  opacity: 0.75;
+
 }
 
 .contact img {
   height: 1.5rem;
-  // transition: all 0.7s ease;
-  opacity: 0.7;
 }
 
-.footer-body img:hover {
+.socials img:hover {
   opacity: 1;
 }
 
-a{
+a {
   text-decoration: none;
-  color:white;
+  color:rgb(245, 230, 217);
 }
