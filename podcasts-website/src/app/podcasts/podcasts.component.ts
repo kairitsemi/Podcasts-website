@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -10,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class PodcastsComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
   }
+
+
 
 }
