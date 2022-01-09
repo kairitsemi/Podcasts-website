@@ -1,14 +1,22 @@
 /* Application-wide Styles */
 h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #095d63; /* The title color from the logo */
+  font-family: 'Montserrat', sans-serif;
   font-size: 250%;
 }
 h2,
 h3 {
   color: #444;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
+}
+
+p {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
 }
 
 body,
@@ -21,3 +29,4 @@ button {
 * {
   font-family: 'Lato', sans-serif;
 }
+
