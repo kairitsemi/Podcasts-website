@@ -1,0 +1,86 @@
+.product-type {
+  color: rgb(204, 136, 9);
+  letter-spacing: 0.1em
+}
+
+.product-type:hover {
+  color: rgb(133, 88, 6);
+  cursor: pointer;
+}
+
+.product {
+  max-width: 350px;
+}
+
+input.quantity {
+  width: 55px;
+  height: 40px;
+  padding: 7px;
+  display: inline;
+  margin-left: 1rem;
+}
+
+button.add-to-cart {
+  margin-left:5%
+}
+
+.product-type.active {
+  color: rgb(133, 88, 6);
+  font-weight: 600;
+}
+
+.product img {
+  margin-bottom: 1rem;
+}
+
+.cart-button {
+  background-color: rgb(243, 240, 234);
+  cursor: pointer;
+  position: fixed;
+  top: calc(50% - 80px);
+  right: 0px;
+  border-radius: 5px 0px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0px 17px;
+  justify-content: center;
+  width: 70px;
+  border: 1px solid darkgray;
+  border-right: none;
+  box-shadow: 0px 3px 8px #00000038;
+}
+
+.cart-button.dark {
+  background-color: rgb(213, 208, 196);
+}
+
+.cart-button b {
+  font-size: 1.15rem;
+}
+
+.cart-detailed {
+  width: 400px;
+  background-color: rgb(243, 240, 234);
+  border: 1px solid darkgray;
+  border-right: none;
+  border-radius: 5px 0px 0px 5px;
+  position: fixed;
+  right: 0px;
+  top: 0;
+  bottom:0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0px 17px;
+  border: 1px solid darkgray;
+  border-right: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cart-detailed img {
+  width: 90%;
+}
+
+.total-sum {
+  border-top: 1px solid black
+}
