@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShopComponent } from './shop/shop.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PodcastsComponent
+    PodcastsComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
