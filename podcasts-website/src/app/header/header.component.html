@@ -29,6 +29,8 @@
           </li>
           <li class="nav-item dropdown">
             <a
+              routerLink="/podcasts"
+              routerLinkActive="active"
               class="nav-link dropdown-toggle"
               id="navbarDropdown"
               role="button"
@@ -39,16 +41,18 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" routerLink="/podcasts">Latest</a>
+                <a class="dropdown-item" (click)="goToLatest()"
+                  >Latest episodes</a
+                >
               </li>
               <li>
-                <a class="dropdown-item" routerLink="/podcasts"
-                  >Most listened</a
+                <a class="dropdown-item" (click)="goToPopular()"
+                  >Popular episodes</a
                 >
               </li>
               <li><hr class="dropdown-divider" /></li>
               <li>
-                <a class="dropdown-item" routerLink="/podcasts">All podcasts</a>
+                <a class="dropdown-item" (click)="goToAll()">All episodes</a>
               </li>
             </ul>
           </li>

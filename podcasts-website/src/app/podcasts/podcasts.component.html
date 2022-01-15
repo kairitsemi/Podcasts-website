@@ -1,380 +1,431 @@
 <app-header></app-header>
-<div class="p-5">
-  <div class="container-fluid py-5">
-    <div class="row mt-3">
-      <h3>Latest Episodes</h3>
-      <div class="col-md-4">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
+<div class="container">
+  <h1 id="latestEpisodes">Latest episodes</h1>
+
+  <section class="mt-5">
+    <div class="d-flex flex-wrap justify-content-evenly">
+      <div
+        *ngFor="let episode of displayedEpisodes"
+        class="episode col-md-3 m-4"
+      >
+        <div>
+          <iframe
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184507971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
           <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
+            href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
+            title="#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba noorena õiget vastust!"
             target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
+            >#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis
+            juba noorena õiget vastust!</a
           >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
-            title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei
-            leia ühtegi head tehingut</a
-          >
-        </div>
-      </div>
-      <div class="col-md-4">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-            title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et
-            kinnisvara on vahend, mitte religioon!</a
-          >
-        </div>
-      </div>
-      <div class="col-md-4">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
-            title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei
-            leia ühtegi head tehingut</a
-          >
+          <p>{{ episode.title }}</p>
+
+          <!-- <img src="{{ episode.imagePath }}" alt="" class="w-100" /> -->
         </div>
       </div>
     </div>
-    <div class="row mt-3">
-      <h3>Most listened episodes</h3>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
-            title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei
-            leia ühtegi head tehingut</a
-          >
-        </div>
-      </div>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-            title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et
-            kinnisvara on vahend, mitte religioon!</a
-          >
-        </div>
-      </div>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-            title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et
-            kinnisvara on vahend, mitte religioon!</a
-          >
-        </div>
-      </div>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-            title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et
-            kinnisvara on vahend, mitte religioon!</a
-          >
-        </div>
-      </div>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-            title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et
-            kinnisvara on vahend, mitte religioon!</a
-          >
-        </div>
-      </div>
-      <div class="col-md-2">
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        ></iframe>
-        <div
-          style="
-            font-size: 10px;
-            color: #cccccc;
-            line-break: anywhere;
-            word-break: normal;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
-              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-            font-weight: 100;
-          "
-        >
-          <a
-            href="https://soundcloud.com/user-79516917"
-            title="Kinnisvarajutud"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >Kinnisvarajutud</a
-          >
-          ·
-          <a
-            href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
-            title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
-            target="_blank"
-            style="color: #cccccc; text-decoration: none"
-            >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei
-            leia ühtegi head tehingut</a
-          >
-        </div>
-      </div>
+  </section>
+
+  <div class="episodes">
+    <div class="episode">
+      <iframe
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184518525%3Fsecret_token%3Ds-8PrxG5RAgTp&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/66-heigo-kriibi-kuidas-palgatootajana-ilma-omafinantseeringuta-uuriportfellile-alus-panna/s-8PrxG5RAgTp"
+        title="#66 | Heigo Kriibi - kuidas palgatöötajana ilma omafinantseeringuta üüriportfellile alus panna?"
+        target="_blank"
+        s
+        >#66 | Heigo Kriibi - kuidas palgatöötajana ilma omafinantseeringuta
+        üüriportfellile alus panna?</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184507971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
+        title="#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba noorena õiget vastust!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba
+        noorena õiget vastust!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+  </div>
+
+  <h1 id="popularEpisodes" class="mt-5">Popular episodes</h1>
+
+  <div class="episodes">
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
+        title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
+        target="_blank"
+        >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia
+        ühtegi head tehingut</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
+        title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia
+        ühtegi head tehingut</a
+      >
+    </div>
+  </div>
+
+  <h1 id="allEpisodes" class="mt-5">All episodes</h1>
+  <div class="episodes">
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184507971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
+        title="#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba noorena õiget vastust!"
+        target="_blank"
+        >#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba
+        noorena õiget vastust!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
+        title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
+        target="_blank"
+        >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia
+        ühtegi head tehingut</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1181352823&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
+        title="#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara on vahend, mitte religioon!"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#64 | Mihkel Kukk - mees, kes julgeb meie saates öelda, et kinnisvara
+        on vahend, mitte religioon!</a
+      >
+    </div>
+    <div class="episode">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1171532626&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      ></iframe>
+
+      <a
+        href="https://soundcloud.com/user-79516917"
+        title="Kinnisvarajutud"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >Kinnisvarajutud</a
+      >
+      ·
+      <a
+        href="https://soundcloud.com/user-79516917/62-appi-mida-teha-mul-pole-teadmisi-mul-pole-raha-ja-ma-ei-leia-uhtegi-head-tehingut"
+        title="#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia ühtegi head tehingut"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+        >#62 | Appi, mida teha?! Mul pole teadmisi, mul pole raha ja ma ei leia
+        ühtegi head tehingut</a
+      >
     </div>
   </div>
 </div>

@@ -9,7 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ShopComponent } from './shop/shop.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
