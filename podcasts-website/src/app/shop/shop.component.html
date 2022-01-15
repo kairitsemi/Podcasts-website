@@ -35,9 +35,11 @@
 </div>
 
 <app-footer></app-footer>
+
 <app-shopping-cart
   *ngIf="!cartDetailedHidden"
   [itemsInCartTotalSum]="itemsInCartTotalSum"
   (closeCartEvent)="toggleCartDetailVisibility()"
   (removeItemFromCartEvent)="updateproductsInCartAmount()"
-  ></app-shopping-cart>
+  >
+</app-shopping-cart>
