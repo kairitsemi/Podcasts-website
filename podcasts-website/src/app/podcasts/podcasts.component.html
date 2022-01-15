@@ -1,7 +1,32 @@
 <app-header></app-header>
-
 <div class="container">
   <h1 id="latestEpisodes">Latest episodes</h1>
+
+  <section class="mt-5">
+    <div class="d-flex flex-wrap justify-content-evenly">
+      <div
+        *ngFor="let episode of displayedEpisodes"
+        class="episode col-md-3 m-4"
+      >
+        <div>
+          <iframe
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184507971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+          <a
+            href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
+            title="#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis juba noorena õiget vastust!"
+            target="_blank"
+            >#65 | Kas korter Kesklinnas või 300-ne bemm? Markus Haiba teadis
+            juba noorena õiget vastust!</a
+          >
+          <p>{{ episode.title }}</p>
+
+          <!-- <img src="{{ episode.imagePath }}" alt="" class="w-100" /> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="episodes">
     <div class="episode">
       <iframe

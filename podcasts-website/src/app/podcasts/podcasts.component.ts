@@ -1,5 +1,5 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { PodcastService } from '../podcast.service';
 
 
 @Component({
@@ -8,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./podcasts.component.scss']
 })
 export class PodcastsComponent implements OnInit {
-episodes: any[] = [];
+displayedEpisodes: any;
 
-  constructor(private viewportScroller: ViewportScroller) { }
+
+  constructor(private podcastService: PodcastService) { }
 
   ngOnInit(): void {
-
+    this.displayedEpisodes = this.podcastService.getEpisodes();
   }
+
+
+
 
 
 

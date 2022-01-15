@@ -20,14 +20,14 @@ div.episode a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 992px) {
-  .episodes {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+// @media screen and (max-width: 992px) {
+//   .episodes {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
 
-@media screen and (max-width: 576px) {
-  .episodes {
-    grid-template-columns: 1fr;
-  }
-}
+// @media screen and (max-width: 576px) {
+//   .episodes {
+//     grid-template-columns: 1fr;
+//   }
+// }
