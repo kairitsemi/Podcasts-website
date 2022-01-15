@@ -1,15 +1,21 @@
 .product-type {
   color: rgb(204, 136, 9);
-  letter-spacing: 0.1em
-}
-
-.product-type:hover {
-  color: rgb(133, 88, 6);
-  cursor: pointer;
+  letter-spacing: 0.1em;
+  &:hover {
+    color: rgb(133, 88, 6);
+    cursor: pointer;
+  }
+  &.active {
+    color: rgb(133, 88, 6);
+    font-weight: 600;
+  }
 }
 
 .product {
   max-width: 350px;
+  img {
+    margin-bottom: 1rem;
+  }
 }
 
 input.quantity {
@@ -22,15 +28,6 @@ input.quantity {
 
 button.add-to-cart {
   margin-left:5%
-}
-
-.product-type.active {
-  color: rgb(133, 88, 6);
-  font-weight: 600;
-}
-
-.product img {
-  margin-bottom: 1rem;
 }
 
 .cart-button {
@@ -49,14 +46,12 @@ button.add-to-cart {
   border: 1px solid darkgray;
   border-right: none;
   box-shadow: 0px 3px 8px #00000038;
-}
-
-.cart-button.dark {
-  background-color: rgb(213, 208, 196);
-}
-
-.cart-button b {
-  font-size: 1.15rem;
+  b {
+    font-size: 18px;
+  }
+  &.dark {
+    background-color: rgb(213, 208, 196);
+  }
 }
 
 .cart-detailed {
@@ -75,12 +70,14 @@ button.add-to-cart {
   border: 1px solid darkgray;
   border-right: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  h4{
+    letter-spacing: 0.1rem;
+  }
+  img {
+    width: 90%;
+  }
+  .total-sum {
+    border-top: 1px solid black
+  }
 }
 
-.cart-detailed img {
-  width: 90%;
-}
-
-.total-sum {
-  border-top: 1px solid black
-}

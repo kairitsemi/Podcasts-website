@@ -10,12 +10,11 @@ import { ShopService } from '../shop.service';
 export class ShopComponent implements OnInit {
 
   displayedProducts: any;
-  activeProductType: string = "all";
+  activeProductType: string = 'all';
   productsInCartAmount: number = 0;
   productsInCart: any;
   cartDetailedHidden = true;
-  itemsInCartTotalSum:any;
-  defaultInputValue : number = 3;
+  itemsInCartTotalSum:number = 0;
 
   constructor(private shopService: ShopService, private element: ElementRef) { }
 
@@ -23,30 +22,29 @@ export class ShopComponent implements OnInit {
     this.displayedProducts = this.shopService.getProductsByType('all');
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
     this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
-    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum()
+    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
   }
 
-  chooseProductType(type:string) {
+  chooseProductTypeToDisplay(type:string) {
     this.displayedProducts = this.shopService.getProductsByType(type);
     this.activeProductType = type;
   }
 
   addToCart(product:any) {
-    var product = product;
-
-    var numberOfItems = <HTMLInputElement>document.getElementById('quantity' + product?.id);
-    this.shopService.addProductsToCart(product, numberOfItems.value);
+    var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
+    var numberOfItems = Number(quantityInputElement.value);
+    this.shopService.addProductsToCart(product, numberOfItems);
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.changeCartButtonColor();
   }
 
   changeCartButtonColor() {
-    let myTag = this.element.nativeElement.querySelector('.cart-button');
-    myTag.classList.add('dark');
+    let cartButtonElement = this.element.nativeElement.querySelector('.cart-button');
+    cartButtonElement.classList.add('dark');
 
     setTimeout(()=>{
-      myTag.classList.remove('dark');
+      cartButtonElement.classList.remove('dark');
     }, 200);
   }
 
@@ -58,8 +56,7 @@ export class ShopComponent implements OnInit {
     this.cartDetailedHidden = !this.cartDetailedHidden;
   }
 
-  removeProductFromCart(productInCart:any){
-    var productToBeRemoved = productInCart;
+  removeProductFromCart(productToBeRemoved:any){
     this.shopService.removeProductFromCart(productToBeRemoved.id, productToBeRemoved.amount)
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
