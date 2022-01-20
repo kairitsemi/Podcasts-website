@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
+import { EpisodeComponent } from './episode/episode.component';
+
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { ShopComponent } from './shop/shop.component';
     HomeComponent,
     PodcastsComponent,
     ShopComponent,
+    EpisodeComponent,
+
   ],
   imports: [
     BrowserModule,
