@@ -12,6 +12,7 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
 import { EpisodeComponent } from './episode/episode.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 
@@ -26,7 +27,7 @@ import { EpisodeComponent } from './episode/episode.component';
     PodcastsComponent,
     ShopComponent,
     EpisodeComponent,
-
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

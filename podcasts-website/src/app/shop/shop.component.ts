@@ -10,60 +10,48 @@ import { ShopService } from '../shop.service';
 export class ShopComponent implements OnInit {
 
   displayedProducts: any;
-  activeProductType: string = "all";
+  activeProductType: string = 'all';
   productsInCartAmount: number = 0;
-  productsInCart: any;
   cartDetailedHidden = true;
-  itemsInCartTotalSum:any;
-  defaultInputValue : number = 3;
+  itemsInCartTotalSum:number = 0;
 
   constructor(private shopService: ShopService, private element: ElementRef) { }
 
   ngOnInit(): void {
     this.displayedProducts = this.shopService.getProductsByType('all');
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
-    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum()
+    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
   }
 
-  chooseProductType(type:string) {
+  chooseProductTypeToDisplay(type:string) {
     this.displayedProducts = this.shopService.getProductsByType(type);
     this.activeProductType = type;
   }
 
   addToCart(product:any) {
-    var product = product;
-
-    var numberOfItems = <HTMLInputElement>document.getElementById('quantity' + product?.id);
-    this.shopService.addProductsToCart(product, numberOfItems.value);
-    this.productsInCartAmount = this.shopService.amountOfProductsInCart;
+    var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
+    var numberOfItems = Number(quantityInputElement.value);
+    this.shopService.addProductsToCart(product, numberOfItems);
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.changeCartButtonColor();
+    this.updateproductsInCartAmount();
   }
 
   changeCartButtonColor() {
-    let myTag = this.element.nativeElement.querySelector('.cart-button');
-    myTag.classList.add('dark');
+    let cartButtonElement = this.element.nativeElement.querySelector('.cart-button');
+    cartButtonElement.classList.add('dark');
 
     setTimeout(()=>{
-      myTag.classList.remove('dark');
+      cartButtonElement.classList.remove('dark');
     }, 200);
   }
 
-  getProductsInCart() {
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
-  }
-
-  toggleCartDetail() {
+  toggleCartDetailVisibility() {
     this.cartDetailedHidden = !this.cartDetailedHidden;
   }
 
-  removeProductFromCart(productInCart:any){
-    var productToBeRemoved = productInCart;
-    this.shopService.removeProductFromCart(productToBeRemoved.id, productToBeRemoved.amount)
+  updateproductsInCartAmount() {
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
   }
-
 
 }

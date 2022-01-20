@@ -21,7 +21,7 @@ export class ShopService {
       return chosenProductsByType
     } else {
       for (let i = 0; i < this.products.length; i++) {
-        if(this.products[i].type === selectedType){
+        if (this.products[i].type === selectedType){
           chosenProductsByType.push(this.products[i])
         }
       }
@@ -29,25 +29,24 @@ export class ShopService {
     }
   }
 
-  addProductsToCart(product: any, quantity:any) {
-
+  addProductsToCart(product: any, quantity:number) {
     if (this.productsInCart.some(prod => prod.id === product.id)) {
         for (let i = 0; i < this.productsInCart.length; i++ ) {
           if (this.productsInCart[i].id === product.id) {
-            this.productsInCart[i].amount += quantity * 1;
-            this.productsInCart[i].priceSum += this.productsInCart[i].singleItemPrice * quantity * 1
+            this.productsInCart[i].amount += quantity;
+            this.productsInCart[i].priceSum += this.productsInCart[i].singleItemPrice * quantity
           }
         }
     } else {
-      product.amount += quantity * 1;
-      product.priceSum = product.singleItemPrice * quantity * 1
+      product.amount += quantity;
+      product.priceSum = product.singleItemPrice * quantity
       this.productsInCart.push(product);
     }
     this.updateAmountOfProductsInCart(quantity, 'add');
   }
 
-  updateAmountOfProductsInCart(quantity:number, operation:string){
-    if(operation == 'add') {
+  updateAmountOfProductsInCart(quantity:number, operationType:string){
+    if (operationType == 'add') {
       this.amountOfProductsInCart += quantity * 1;
     } else {
       this.amountOfProductsInCart -= quantity * 1;
@@ -60,8 +59,11 @@ export class ShopService {
 
   getProductsInCartTotalSum() {
     this.productsInCartTotalSum = 0;
-    for(let i = 0; i < this.productsInCart.length; i++  ){
+    console.log(this.productsInCartTotalSum, 'total');
+    for (let i = 0; i < this.productsInCart.length; i++  ){
+      console.log(this.productsInCart[i].priceSum, 'price');
       this.productsInCartTotalSum +=  this.productsInCart[i].priceSum;
+
     }
    return  this.productsInCartTotalSum
   }
@@ -69,7 +71,8 @@ export class ShopService {
   removeProductFromCart(productId: number, amount: number) {
     for (let i = 0; i < this.productsInCart.length; i++ ) {
       if (this.productsInCart[i].id === productId) {
-        this.productsInCart.splice(i, 1)
+        this.productsInCart[i].amount = 0;
+        this.productsInCart.splice(i, 1);
       }
     }
     this.updateAmountOfProductsInCart(amount, 'subtract');
