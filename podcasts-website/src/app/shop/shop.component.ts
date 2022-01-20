@@ -12,7 +12,6 @@ export class ShopComponent implements OnInit {
   displayedProducts: any;
   activeProductType: string = 'all';
   productsInCartAmount: number = 0;
-  productsInCart: any;
   cartDetailedHidden = true;
   itemsInCartTotalSum:number = 0;
 
@@ -21,7 +20,6 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     this.displayedProducts = this.shopService.getProductsByType('all');
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
     this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
   }
 
@@ -34,9 +32,9 @@ export class ShopComponent implements OnInit {
     var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
     var numberOfItems = Number(quantityInputElement.value);
     this.shopService.addProductsToCart(product, numberOfItems);
-    this.productsInCartAmount = this.shopService.amountOfProductsInCart;
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.changeCartButtonColor();
+    this.updateproductsInCartAmount();
   }
 
   changeCartButtonColor() {
@@ -48,19 +46,12 @@ export class ShopComponent implements OnInit {
     }, 200);
   }
 
-  getProductsInCart() {
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
-  }
-
-  toggleCartDetail() {
+  toggleCartDetailVisibility() {
     this.cartDetailedHidden = !this.cartDetailedHidden;
   }
 
-  removeProductFromCart(productToBeRemoved:any){
-    this.shopService.removeProductFromCart(productToBeRemoved.id, productToBeRemoved.amount)
+  updateproductsInCartAmount() {
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
   }
-
 
 }

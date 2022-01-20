@@ -27,38 +27,19 @@
     </div>
   </section>
 
-  <button class="cart-button" (click)="toggleCartDetail()" role="button">
+  <button class="cart-button" (click)="toggleCartDetailVisibility()" role="button">
     <b>{{productsInCartAmount}}</b>
     <img src="assets/shopping_cart_icon.png" alt="">
   </button>
 
-  <div class="cart-detailed" [hidden]="!cartDetailedHidden">
-    <div class="container">
-      <div class="d-flex justify-content-between">
-        <h4>Shopping Cart</h4>
-        <button class="btn" (click)="toggleCartDetail()">X</button>
-      </div>
-      <div class="d-flex flex-column justify-content-between cart-inside">
-      <div *ngFor="let productInCart of productsInCart">
-        <div class="d-flex my-3">
-          <div class="col-3">
-            <img src="{{productInCart.imagePath}}" alt="Image of The Product">
-          </div>
-          <div class="col-7">
-            <b>{{productInCart.name}}</b>
-              <div>Quantity: {{productInCart.amount}}</div>
-              <div>{{productInCart.priceSum | number : '1.2-2'}} €</div>
-          </div>
-          <div class="col-2">
-            <button class="btn btn-danger remove-from-cart" (click)="removeProductFromCart(productInCart)">X</button>
-          </div>
-        </div>
-      </div>
-      <div class="total-sum">
-        Total: {{itemsInCartTotalSum | number : '1.2-2'}} €
-      </div>
-    </div>
-    </div>
-  </div>
 </div>
+
 <app-footer></app-footer>
+
+<app-shopping-cart
+  *ngIf="!cartDetailedHidden"
+  [itemsInCartTotalSum]="itemsInCartTotalSum"
+  (closeCartEvent)="toggleCartDetailVisibility()"
+  (removeItemFromCartEvent)="updateproductsInCartAmount()"
+  >
+</app-shopping-cart>
