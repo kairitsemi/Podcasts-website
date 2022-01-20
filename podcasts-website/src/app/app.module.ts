@@ -14,6 +14,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     HomeComponent,
     PodcastsComponent,
     ShopComponent,
-    ShoppingCartComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
