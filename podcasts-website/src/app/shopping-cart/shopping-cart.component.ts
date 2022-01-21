@@ -14,18 +14,17 @@ export class ShoppingCartComponent implements OnInit {
   @Output() removeItemFromCartEvent = new EventEmitter();
   @Output() emptyCartEvent = new EventEmitter();
 
+  productsInCart: any[] = [];
+  showConfirmation = false;
 
   emailForm  = new FormGroup ({
     email: new FormControl('', [ Validators.email, Validators.required])
   })
-  productsInCart: any;
-  showConfirmation = false;
 
   constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
     this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
-    console.log(this.productsInCart)
   }
 
   closeCart() {
@@ -39,12 +38,11 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   emptyCart() {
-    this.showConfirmation = true;
     this.shopService.removeItemsFromCart();
+    this.showConfirmation = true;
     this.itemsInCartTotalSum = 0;
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
     this.emptyCartEvent.emit();
-    console.log(this.productsInCart , 'productid kui cart on tühjendatud 1')
+    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
   }
 
 

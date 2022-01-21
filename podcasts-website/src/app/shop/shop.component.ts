@@ -14,6 +14,7 @@ export class ShopComponent implements OnInit {
   productsInCartAmount: number = 0;
   cartDetailedHidden = true;
   itemsInCartTotalSum:number = 0;
+  defaultInputAmount: number = 0;
 
   constructor(private shopService: ShopService, private element: ElementRef) { }
 
@@ -32,7 +33,6 @@ export class ShopComponent implements OnInit {
     var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
     var numberOfItems = Number(quantityInputElement.value);
     this.shopService.addProductsToCart(product, numberOfItems);
-    console.log(numberOfItems,' no of ITEMS added')
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.changeCartButtonColor();
     this.updateproductsInCartAmount();
@@ -53,6 +53,7 @@ export class ShopComponent implements OnInit {
 
   updateproductsInCartAmount() {
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
+
   }
 
 }
