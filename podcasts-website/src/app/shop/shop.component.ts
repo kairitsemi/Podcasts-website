@@ -32,6 +32,7 @@ export class ShopComponent implements OnInit {
     var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
     var numberOfItems = Number(quantityInputElement.value);
     this.shopService.addProductsToCart(product, numberOfItems);
+    console.log(numberOfItems,' no of ITEMS added')
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.changeCartButtonColor();
     this.updateproductsInCartAmount();

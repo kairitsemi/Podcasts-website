@@ -23,12 +23,12 @@
     <div class="total-sum">
       Total: {{itemsInCartTotalSum | number : '1.2-2'}} €
     </div>
-    <div class="mt-3">
+    <div class="mt-3" [formGroup]="emailForm">
       <label for="email">
         Send invoice to email
       </label>
-      <input id="email" class="form-control" type="email" placeholder="example@address.com">
-      <button class="btn btn-success mt-2" (click)="displayConfirmation()">
+      <input id="email" class="form-control" type="email" placeholder="example@address.com" formControlName="email">
+      <button class="btn btn-success mt-2" (click)="emptyCart()" [disabled]="emailForm.invalid">
         Send
       </button>
     </div>

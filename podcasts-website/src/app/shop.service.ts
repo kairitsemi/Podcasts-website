@@ -10,6 +10,7 @@ export class ShopService {
   productsInCart: any[] = [];
   productsInCartTotalSum: number = 0;
   amountOfProductsInCart: number = 0;
+  emptyArray: any[] = []
 
   constructor() {};
 
@@ -30,6 +31,8 @@ export class ShopService {
   }
 
   addProductsToCart(product: any, quantity:number) {
+    console.log(product.amount, 'enne')
+    console.log(quantity, 'quantity')
     if (this.productsInCart.some(prod => prod.id === product.id)) {
         for (let i = 0; i < this.productsInCart.length; i++ ) {
           if (this.productsInCart[i].id === product.id) {
@@ -43,6 +46,7 @@ export class ShopService {
       this.productsInCart.push(product);
     }
     this.updateAmountOfProductsInCart(quantity, 'add');
+    console.log(product.amount, 'pärast')
   }
 
   updateAmountOfProductsInCart(quantity:number, operationType:string){
@@ -54,7 +58,9 @@ export class ShopService {
   }
 
   getProductsInCartByProductandAmount() {
+    console.log(this.productsInCart, ' pärast tühjendamist 2')
     return this.productsInCart
+
   }
 
   getProductsInCartTotalSum() {
@@ -76,6 +82,16 @@ export class ShopService {
       }
     }
     this.updateAmountOfProductsInCart(amount, 'subtract');
+  }
+
+  removeItemsFromCart() {
+    this.productsInCart.length = 0;
+    this.productsInCartTotalSum = 0;
+    this.amountOfProductsInCart = 0;
+    for(let i= 0; i < this.productsInCart.length; i++) {
+    this.productsInCart[i].amount = 0;
+   }
+   console.log(this.productsInCart, 'tühjendamisel 4')
   }
 
  products = [
