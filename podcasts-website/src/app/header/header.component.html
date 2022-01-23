@@ -1,71 +1,81 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home" routerLinkActive="active"
-        ><img class="navbar-logo" src="/assets/kinnisvarajutud_3.jpg" alt=""
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active"
-              >About</a
-            >
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              routerLink="/podcasts"
-              routerLinkActive="active"
-              class="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Podcasts
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" (click)="goToLatest()"
-                  >Latest episodes</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" (click)="goToPopular()"
-                  >Popular episodes</a
-                >
-              </li>
-              <li><hr class="dropdown-divider" /></li>
-              <li>
-                <a class="dropdown-item" (click)="goToAll()">All episodes</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/shop">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact" routerLinkActive="active"
-              >Contact</a
-            >
-          </li>
-        </ul>
-        <form class="d-flex">
+  <div class="container-fluid">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light d-flex flex-wrap">
+        <a
+          class="navbar-brand col-1"
+          routerLink="/home"
+          routerLinkActive="active"
+          ><img class="navbar-logo" src="/assets/kinnisvarajutud_3.jpg" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse col-10"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about" routerLinkActive="active"
+                >About</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                routerLink="/podcasts"
+                routerLinkActive="active"
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Podcasts
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" (click)="goToLatest()"
+                    >Latest episodes</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="goToPopular()"
+                    >Popular episodes</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" (click)="goToAll()">All episodes</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/contact"
+                routerLinkActive="active"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <!-- <form class="d-flex"> Kommenteerin hetkel välja, sest kahtlustan, et ei jõua siia taha funktsinaalsust luua
           <input
             class="form-control me-2"
             type="search"
@@ -73,19 +83,25 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+        </form> -->
+        </div>
+        <div class="col-12 mb-3">
+          <div class="header-socials col-12 mb-3">
+            <a href="https://www.facebook.com/groups/359228128419094"
+              ><fa-icon [icon]="['fab', 'facebook']"></fa-icon
+            ></a>
+            <a href="https://soundcloud.com/user-79516917"
+              ><fa-icon [icon]="['fab', 'soundcloud']"></fa-icon
+            ></a>
+            <a href="https://open.spotify.com/show/0feO2mMq54gP2SpKYq4sfN"
+              ><fa-icon [icon]="['fab', 'spotify']"></fa-icon
+            ></a>
+          </div>
+          <div class="col-12">
+            <h1 class="header-title">Kinnisvarajutud Podcast</h1>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-  <div class="header-socials">
-    <a href="https://www.facebook.com/groups/359228128419094"
-      ><img src="/assets/facebook_icon.png" alt=""
-    /></a>
-    <a href="https://soundcloud.com/user-79516917"
-      ><img src="/assets/soundcloud_icon.png" alt=""
-    /></a>
-    <a href="https://open.spotify.com/show/0feO2mMq54gP2SpKYq4sfN"
-      ><img src="/assets/spotify_icon.png" alt=""
-    /></a>
   </div>
 </header>

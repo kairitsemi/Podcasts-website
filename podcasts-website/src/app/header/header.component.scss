@@ -1,14 +1,55 @@
+.navbar {
+  min-height: 350px;
+  align-content: space-between;
+}
+
 .navbar-logo {
   height: 100px;
   border-radius: 0.5rem;
 }
 
-.header-socials img {
-  width: 40px;
-  // transition: all 0.5s ease;
-  opacity: 0.5;
+.header-socials fa-icon {
+  font-size: 2rem;
+  //transition: all 0.5s ease;
+  //opacity: 0.7;
+  padding: 0.5rem;
 }
 
-.header-socials img:hover {
-  opacity: 1;
+//.header-socials img:hover {
+ // opacity: 1;
+//}
+
+.container-fluid {
+  background-image: url("../../assets/heading-houses.jpg");
+  background-position: 50% 70%;
+  min-height: 350px;
+  background-size: cover;
+  color: white;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.navbar .active {
+  color:rgb(255, 255, 255);
+}
+
+.navbar .dropdown-item:hover {
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color:rgb(6, 126, 126);
+}
+
+.dropdown-menu {
+  background-color: rgba(59, 147, 153, 0.131);
+}
+
+.header-title {
+  color: white;
+  font-weight: 600;
 }
