@@ -1,16 +1,15 @@
-.episodes {
-  padding: 0 0 0px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 40px;
-  grid-row-gap: 60px;
-  margin-top: 20px;
-}
+// .episodes {
+//   padding: 0 0 0px 0;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-column-gap: 40px;
+//   grid-row-gap: 60px;
+//   margin-top: 20px;
+// }
 
 div.episode iframe {
   width: 100%;
   height: 300px;
-  margin-bottom: 14px;
   border-radius: 8px;
   box-shadow: 0 3px 24px -1px rgb(23 29 37 / 10%);
 }

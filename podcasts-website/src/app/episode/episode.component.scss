@@ -1,0 +1,18 @@
+div.episode iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 3px 24px -1px rgb(23 29 37 / 10%);
+}
+
+img {
+  height: 1.7rem;
+  opacity: 0.7;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+}
