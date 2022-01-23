@@ -14,14 +14,14 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLatest() {
-    this.scroller.scrollToAnchor("latestEpisodes");
+    this.scroller.scrollToAnchor("latest-episodes");
   }
 
   goToPopular() {
-    this.scroller.scrollToAnchor("popularEpisodes");
+    this.scroller.scrollToAnchor("popular-episodes");
   }
 
   goToAll() {
-    this.scroller.scrollToAnchor("allEpisodes");
+    this.scroller.scrollToAnchor("all-episodes");
   }
 }

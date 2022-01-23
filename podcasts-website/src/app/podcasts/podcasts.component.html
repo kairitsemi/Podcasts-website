@@ -1,261 +1,65 @@
 <app-header></app-header>
+
 <div class="container">
-  <h1 id="latestEpisodes">Latest episodes</h1>
-
-  <h1 id="popularEpisodes" class="mt-5">Popular episodes</h1>
+  <h1 id="latest-episodes">Latest episodes</h1>
 
   <div class="d-flex flex-wrap justify-content-evenly">
     <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
       class="episode col-md-3 m-4"
-    >
-      <!-- <iframe [src]="genuinevideoUrls[i]"> </iframe>
-
-      <a [routerLink]="['/episode', episode.id]" target="_blank"
-        >#{{ episode.id }} | {{ episode.title }}</a
-      > -->
-    </div>
-  </div>
-
-  <h1 id="allEpisodes" class="mt-5">All episodes</h1>
-
-  <div class="d-flex flex-wrap justify-content-evenly">
-    <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
+      *ngFor="let episode of latestEpisodes; let i = index"
     >
       <iframe
         scrolling="no"
         frameborder="no"
         allow="autoplay"
-        [src]="genuinevideoUrls[i]"
+        [src]="genuinevideoUrlsForLatestEpisodes[i]"
       ></iframe>
 
       <a [routerLink]="['/episode', episode.id]" target="_blank"
         >#{{ episode.id }} | {{ episode.title }}</a
       >
     </div>
-
-    <!-- <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
-    >
-      <iframe id="69" [src]="genuinevideoUrls[i]"> </iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 69"
-          href="https://soundcloud.com/user-79516917/69-analuusime-koos-tonu-toompargiga-kas-kinnisvarapidu-voib-2022-aastal-labi-saada/s-QU5kS0W0nm5"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div> -->
-    <!-- <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
-    >
-      <iframe [src]="genuinevideoUrls[i]"></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 68"
-          href="https://soundcloud.com/user-79516917/68-eesmargid-eesmargid-uks-taitis-koik-kuhjaga-teine-tahtis-parimat-aga-laks-nagu-ikka/s-sm9qp24rKWj"
-          title="#68 | Eesmärgid, eesmärgid... Selgub, kas Algis ja Siim on vaid jutumehed või sai midagi tehtud ka!"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-    <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
-    >
-      <iframe [src]="genuinevideoUrls[i]"></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 67"
-          href="https://soundcloud.com/user-79516917/67-tavaline-eesti-mees-margo-merigan-ja-tema-20-aastat-kinnisvaras"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div> -->
   </div>
 
-  <!-- Või see variant??? -->
-  <!-- <div class="episode col-md-3 m-4">
-    <iframe
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184518525%3Fsecret_token%3Ds-8PrxG5RAgTp&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-    ></iframe>
-    <a
-      href="https://soundcloud.com/user-79516917/66-heigo-kriibi-kuidas-palgatootajana-ilma-omafinantseeringuta-uuriportfellile-alus-panna"
-      >#66 | {{ displayedEpisodes[66].title }}</a
-    >
-  </div> -->
+  <h1 id="popular-episodes" class="mt-5">Popular episodes</h1>
 
-  <!-- <div class="d-flex flex-wrap justify-content-evenly">
-    <div class="episode col-md-3 m-4">
-      <iframe
-        id="67"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1196758315&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
-      ></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 67"
-          href="https://soundcloud.com/user-79516917/67-tavaline-eesti-mees-margo-merigan-ja-tema-20-aastat-kinnisvaras"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-    <div class="episode col-md-3 m-4">
-      <iframe
-        id="66"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184518525%3Fsecret_token%3Ds-8PrxG5RAgTp&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-      ></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 66"
-          href="https://soundcloud.com/user-79516917/66-heigo-kriibi-kuidas-palgatootajana-ilma-omafinantseeringuta-uuriportfellile-alus-panna"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-    <div class="episode col-md-3 m-4">
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <div
+      class="episode col-md-3 m-4"
+      *ngFor="let episode of popularEpisodes; let i = index"
+    >
       <iframe
         scrolling="no"
         frameborder="no"
         allow="autoplay"
-        id="65"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1184507971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        [src]="genuinevideoUrlsForPopularEpisodes[i]"
       ></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 65"
-          href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
+
+      <a [routerLink]="['/episode', episode.id]" target="_blank"
+        >#{{ episode.id }} | {{ episode.title }}</a
+      >
     </div>
   </div>
 
+  <h1 id="all-episodes" class="mt-5">All episodes</h1>
 
   <div class="d-flex flex-wrap justify-content-evenly">
     <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
       class="episode col-md-3 m-4"
-    >
-      <iframe [src]="genuinevideoUrls[i]"> </iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 69"
-          href="https://soundcloud.com/user-79516917/69-analuusime-koos-tonu-toompargiga-kas-kinnisvarapidu-voib-2022-aastal-labi-saada/s-QU5kS0W0nm5"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-    <div
       *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
     >
-      <iframe [src]="genuinevideoUrls[i]"></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 68"
-          href="https://soundcloud.com/user-79516917/68-eesmargid-eesmargid-uks-taitis-koik-kuhjaga-teine-tahtis-parimat-aga-laks-nagu-ikka/s-sm9qp24rKWj"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-    <div
-      *ngFor="let episode of displayedEpisodes; let i = index"
-      class="episode col-md-3 m-4"
-    >
-      <iframe [src]="genuinevideoUrls[i]"></iframe>
-      <div *ngFor="let episode of displayedEpisodes">
-        <a
-          *ngIf="episode.id === 67"
-          href="https://soundcloud.com/user-79516917/67-tavaline-eesti-mees-margo-merigan-ja-tema-20-aastat-kinnisvaras"
-          target="_blank"
-          >#{{ episode.id }} | {{ episode.title }}</a
-        >
-      </div>
-    </div>
-  </div>
-  <div
-    *ngFor="let episode of displayedEpisodes; let i = index"
-    class="episode col-md-3 m-4"
-  >
-    <iframe [src]="genuinevideoUrls[i]"></iframe>
-    <div *ngFor="let episode of displayedEpisodes">
-      <a
-        *ngIf="episode.id === 66"
-        href="https://soundcloud.com/user-79516917/66-heigo-kriibi-kuidas-palgatootajana-ilma-omafinantseeringuta-uuriportfellile-alus-panna"
-        target="_blank"
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        [src]="genuinevideoUrlsForAllEpisodes[i]"
+      ></iframe>
+
+      <a [routerLink]="['/episode', episode.id]" target="_blank"
         >#{{ episode.id }} | {{ episode.title }}</a
       >
     </div>
   </div>
-  <div
-    *ngFor="let episode of displayedEpisodes; let i = index"
-    class="episode col-md-3 m-4"
-  >
-    <iframe
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      [src]="genuinevideoUrls[i]"
-    ></iframe>
-    <div *ngFor="let episode of displayedEpisodes">
-      <a
-        *ngIf="episode.id === 65"
-        href="https://soundcloud.com/user-79516917/65-kas-korter-kesklinnas-voi-300-ne-bemm-markus-haiba-teadis-juba-noorena-oiget-vastust"
-        target="_blank"
-        >#{{ episode.id }} | {{ episode.title }}</a
-      >
-    </div>
-  </div>
-  <div
-    *ngFor="let episode of displayedEpisodes; let i = index"
-    class="episode col-md-3 m-4"
-  >
-    <iframe
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      [src]="genuinevideoUrls[i]"
-    ></iframe>
-    <div *ngFor="let episode of displayedEpisodes">
-      <a
-        *ngIf="episode.id === 64"
-        href="https://soundcloud.com/user-79516917/64-mihkel-kukk-mees-kes-julgeb-meie-saates-oelda-et-kinnisvara-on-vahend-mitte-religioon"
-        target="_blank"
-        >#{{ episode.id }} | {{ episode.title }}</a
-      >
-    </div>
-  </div>
-  <div
-    *ngFor="let episode of displayedEpisodes; let i = index"
-    class="episode col-md-3 m-4"
-  >
-    <iframe
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay"
-      [src]="genuinevideoUrls[i]"
-    ></iframe>
-    <div *ngFor="let episode of displayedEpisodes">
-      <a
-        *ngIf="episode.id === 63"
-        href="https://soundcloud.com/user-79516917/63-tunne-oma-kodumaad-ehk-birk-oidramiga-marjamaa-naitel-vaikeasulate-kinnisvarast"
-        target="_blank"
-        >#{{ episode.id }} | {{ episode.title }}</a
-      >
-    </div>
-  </div>
-</div> -->
 </div>
+
 <app-footer></app-footer>
