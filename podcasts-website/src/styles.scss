@@ -17,6 +17,18 @@ p {
 
 .container {
   max-width: 1200px;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+footer .container {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+header .container {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 body,
