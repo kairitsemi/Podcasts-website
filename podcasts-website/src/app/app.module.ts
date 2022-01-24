@@ -15,7 +15,9 @@ import { EpisodeComponent } from './episode/episode.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 import { faFacebook, faSoundcloud, faSpotify} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -37,7 +39,8 @@ import { faFacebook, faSoundcloud, faSpotify} from '@fortawesome/free-brands-svg
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -45,6 +48,6 @@ import { faFacebook, faSoundcloud, faSpotify} from '@fortawesome/free-brands-svg
 export class AppModule {
   constructor(library: FaIconLibrary) {
     // Add multiple icons to the library
-    library.addIcons(faFacebook, faSoundcloud, faSpotify);
+    library.addIcons(faFacebook, faSoundcloud, faSpotify, faPhone, faEnvelope, faMapMarkerAlt);
   }
 }
