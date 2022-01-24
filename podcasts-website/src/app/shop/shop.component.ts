@@ -30,7 +30,7 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(product:any) {
-    var quantityInputElement= <HTMLInputElement>document.getElementById('quantity' + product?.id);
+    var quantityInputElement = <HTMLInputElement>document.getElementById('quantity' + product?.id);
     var numberOfItems = Number(quantityInputElement.value);
     this.shopService.addProductsToCart(product, numberOfItems);
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
@@ -49,11 +49,11 @@ export class ShopComponent implements OnInit {
 
   toggleCartDetailVisibility() {
     this.cartDetailedHidden = !this.cartDetailedHidden;
+    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
   }
 
   updateproductsInCartAmount() {
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-
   }
 
 }

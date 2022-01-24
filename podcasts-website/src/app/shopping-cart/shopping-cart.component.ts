@@ -29,6 +29,7 @@ export class ShoppingCartComponent implements OnInit {
 
   closeCart() {
     this.closeCartEvent.emit();
+    this.showConfirmation = false;
   }
 
   removeProductFromCart(productToBeRemoved:any){
@@ -43,7 +44,7 @@ export class ShoppingCartComponent implements OnInit {
     this.itemsInCartTotalSum = 0;
     this.emptyCartEvent.emit();
     this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
+    this.emailForm.reset();
   }
-
 
 }

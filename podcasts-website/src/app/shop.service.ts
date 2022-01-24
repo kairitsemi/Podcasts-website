@@ -82,8 +82,8 @@ export class ShopService {
     this.productsInCart.length = 0;
     this.productsInCartTotalSum = 0;
     this.amountOfProductsInCart = 0;
-    for(let i= 0; i < this.productsInCart.length; i++) {
-    this.productsInCart[i].amount = 0;
+    for(let i= 0; i < this.products.length; i++) {
+        this.products[i].amount = 0;
    }
   }
 
