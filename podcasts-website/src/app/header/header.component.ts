@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewportScroller } from '@angular/common'
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -8,20 +8,22 @@ import { ViewportScroller } from '@angular/common'
 })
 export class HeaderComponent implements OnInit {
 
+
+
   constructor(private scroller: ViewportScroller) { }
 
   ngOnInit(): void {
   }
 
   goToLatest() {
-    this.scroller.scrollToAnchor("latestEpisodes");
+    this.scroller.scrollToAnchor("latest-episodes");
   }
 
   goToPopular() {
-    this.scroller.scrollToAnchor("popularEpisodes");
+    this.scroller.scrollToAnchor("popular-episodes");
   }
 
   goToAll() {
-    this.scroller.scrollToAnchor("allEpisodes");
+    this.scroller.scrollToAnchor("all-episodes");
   }
 }
