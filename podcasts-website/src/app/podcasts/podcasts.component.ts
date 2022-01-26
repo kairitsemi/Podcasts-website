@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 import { PodcastService } from '../podcast.service';
 
@@ -17,7 +18,13 @@ genuinevideoUrlsForAllEpisodes: any = [];
 genuinevideoUrlsForLatestEpisodes: any = [];
 genuinevideoUrlsForPopularEpisodes: any = [];
 
-  constructor(private sanitizer: DomSanitizer, private podcastService: PodcastService) { }
+pageYoffset = 0;
+@HostListener('window:scroll', ['$event']) onScroll(): void{
+  this.pageYoffset = window.pageYOffset;
+}
+
+
+  constructor(private sanitizer: DomSanitizer, private podcastService: PodcastService, private scroller: ViewportScroller) { }
 
   ngOnInit(): void {
     this.displayedEpisodes = this.podcastService.getAllEpisodesSortedById();
@@ -40,9 +47,10 @@ genuinevideoUrlsForPopularEpisodes: any = [];
       let genuinevideoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl( this.popularEpisodes[i].src);
     this.genuinevideoUrlsForPopularEpisodes.push(genuinevideoUrl)
     }
-
   }
 
+  scrollToTop(){
+    this.scroller.scrollToPosition([0,0]);
   }
 
-
+}

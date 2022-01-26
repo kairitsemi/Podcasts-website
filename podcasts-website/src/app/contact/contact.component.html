@@ -11,65 +11,75 @@
         </p>
         <p><fa-icon [icon]="['fas', 'phone']"></fa-icon>&emsp;56649737</p>
         <p>
-          <!-- <fa-icon [icon]="['fas', 'mapMarker']"></fa-icon>&emsp; -->
-          Ahtri 6, Tallinn, Estonia
+          <fa-icon [icon]="['fas', 'map-marker-alt']"></fa-icon>&emsp;Ahtri 6,
+          Tallinn, Estonia
         </p>
       </div>
     </div>
 
     <div class="col-md-6 pb-5">
-      <form [formGroup]="contactForm" (ngSubmit)="submit()">
-        <div class="mb-3">
-          <label for="inputEmail1" class="form-label">Email address</label>
-          <input
-            type="email"
-            formControlName="email"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-          />
-          <small
-            *ngIf="email && email.invalid && email.touched"
-            class="text-danger ng-invalid"
-            >Email is required</small
-          >
+      <form [formGroup]="contactForm" (ngSubmit)="submit()" #localForm="ngForm">
+        <div class="form-group">
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              [class.is-invalid]="
+                localForm.submitted && contactForm.get('email')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Email is required</div>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="FormControlTextarea1" class="form-label">Subject</label>
+        <div class="form-group mb-3">
+          <label for="FormControlSubject" class="form-label">Subject</label>
           <input
             type="text"
             formControlName="subject"
             class="form-control"
             id="subject"
+            [class.is-invalid]="
+              localForm.submitted && contactForm.get('subject')?.invalid
+            "
           />
-          <small
-            *ngIf="subject && subject.invalid && subject.touched"
-            class="text-danger"
-            >Subject is required</small
-          >
+          <small class="invalid-feedback">Subject is required</small>
         </div>
-        <div class="mb-3">
-          <label for="FormControlTextarea2" class="form-label">Message</label>
+        <div class="form-group mb-3">
+          <label for="FormControlMessage" class="form-label">Message</label>
           <textarea
             class="form-control"
             formControlName="message"
             id="message"
             rows="3"
+            [class.is-invalid]="
+              localForm.submitted && contactForm.get('message')?.invalid
+            "
           ></textarea>
-          <small
-            *ngIf="message && message.invalid && message.touched"
-            class="text-danger"
+          <small class="invalid-feedback"
             >Message is required (minimum 10 characters)</small
           >
         </div>
         <button
-          (click)="submit()"
-          [disabled]="contactForm.invalid"
           type="submit"
           class="btn btn-primary mt-3"
+          (click)="displayConfirmation()"
         >
           Send message
         </button>
+        <div
+          *ngIf="showConfirmation"
+          id="confirmationBox"
+          class="mt-4 text-center"
+        >
+          <div class="alert alert-success">
+            <i class="fa fa-check px-1" aria-hidden="true"></i>
+            Message sent!
+          </div>
+        </div>
       </form>
     </div>
     <iframe
