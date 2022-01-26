@@ -9,6 +9,7 @@ import { PodcastService } from '../podcast.service';
   templateUrl: './podcasts.component.html',
   styleUrls: ['./podcasts.component.scss']
 })
+
 export class PodcastsComponent implements OnInit {
 displayedEpisodes: any = [];
 latestEpisodes: any = [];
