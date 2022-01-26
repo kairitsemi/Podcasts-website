@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,23 +7,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  contactForm: FormGroup = { } as FormGroup;
+  contactForm!: FormGroup;
+  showConfirmation = false;
 
-  constructor() { }
+  @ViewChild(FormGroupDirective) formGroupDirective!: FormGroupDirective;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
-    this.contactForm = new FormGroup({
-      'email' : new FormControl(null, [Validators.required, Validators.email]),
-      'subject' : new FormControl(null, Validators.required),
-      'message' : new FormControl(null, [Validators.required, Validators.minLength(10)])
-    })
-  }
-
-  submit() {
-    console.log(this.contactForm.value);
-    this.contactForm.reset();
-
+    this.contactForm = this.formBuilder.group({
+      email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      subject: this.formBuilder.control('', Validators.required),
+      message: this.formBuilder.control('', [Validators.required, Validators.minLength(10)])
+    }, {updateOn: 'submit'})
   }
 
   get email() {
@@ -37,4 +34,16 @@ export class ContactComponent implements OnInit {
   get message() {
     return this.contactForm.get('message')
   }
+
+  submit() {
+    console.log(this.contactForm.value);
+    if (this.contactForm.valid) {
+      this.formGroupDirective.resetForm()
+    }
+  }
+
+  displayConfirmation() {
+    this.showConfirmation = true;
+  }
+
 }

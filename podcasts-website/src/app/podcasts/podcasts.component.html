@@ -62,4 +62,8 @@
   </div>
 </div>
 
+<div (click)="scrollToTop()" class="scroll-to-top" *ngIf="pageYoffset > 0">
+  <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
+</div>
+
 <app-footer></app-footer>

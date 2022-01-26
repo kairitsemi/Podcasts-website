@@ -34,7 +34,7 @@ export class EpisodeComponent implements OnInit {
 
     for(let i = 0; i < this.displayedEpisodes.length; i++) {
       if( this.podcastService.episodes[i].id == this.idFromRoute) {
-        let genuinevideoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.displayedEpisodes[i].src);
+        let genuinevideoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.displayedEpisodes[i].src2);
         this.genuinevideoUrlsforSingleEpisodes = genuinevideoUrl
 
       }
