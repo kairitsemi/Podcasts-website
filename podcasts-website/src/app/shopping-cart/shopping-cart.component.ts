@@ -9,13 +9,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  @Input() itemsInCartTotalSum:number = 0;
+  @Input() itemsInCartTotalSum: number = 0;
   @Output() closeCartEvent = new EventEmitter();
+  @Output() sendInvoice = new EventEmitter();
   @Output() removeItemFromCartEvent = new EventEmitter();
   @Output() emptyCartEvent = new EventEmitter();
+  @Input() showConfirmation:boolean = false;
 
   productsInCart: any[] = [];
-  showConfirmation = false;
 
   emailForm  = new FormGroup ({
     email: new FormControl('', [ Validators.email, Validators.required])
@@ -29,22 +30,20 @@ export class ShoppingCartComponent implements OnInit {
 
   closeCart() {
     this.closeCartEvent.emit();
-    this.showConfirmation = false;
   }
 
-  removeProductFromCart(productToBeRemoved:any){
+  removeProductFromCart(productToBeRemoved:any) {
     this.shopService.removeProductFromCart(productToBeRemoved.id, productToBeRemoved.amount)
     this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
     this.removeItemFromCartEvent.emit();
   }
 
-  emptyCart() {
+  sendInvoiceAndEmptyCart() {
     this.shopService.removeItemsFromCart();
-    this.showConfirmation = true;
-    this.itemsInCartTotalSum = 0;
     this.emptyCartEvent.emit();
-    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
     this.emailForm.reset();
+    this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
+    this.sendInvoice.emit();
   }
 
 }

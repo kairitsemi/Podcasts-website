@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="itemsInCartTotalSum > 0">
+      <div *ngIf="productsInCart.length != 0">
         <div class="total-sum">
           Total: {{ itemsInCartTotalSum | number: "1.2-2" }} €
         </div>
@@ -45,7 +45,7 @@
           />
           <button
             class="btn btn-success mt-2"
-            (click)="emptyCart()"
+            (click)="sendInvoiceAndEmptyCart()"
             [disabled]="emailForm.invalid"
           >
             Send
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div
-        *ngIf="itemsInCartTotalSum == 0 && !showConfirmation"
+        *ngIf="productsInCart.length == 0 && !showConfirmation"
         class="empty-cart mt-5"
       >
         <h4>Cart is empty</h4>

@@ -79,9 +79,12 @@
 
 <app-shopping-cart
   *ngIf="!cartDetailedHidden"
-  [itemsInCartTotalSum]="itemsInCartTotalSum"
   (closeCartEvent)="toggleCartDetailVisibility()"
+  (sendInvoice)="toggleConfirmation()"
   (removeItemFromCartEvent)="updateproductsInCartAmount()"
   (emptyCartEvent)="updateproductsInCartAmount()"
+  [showConfirmation]="displayConfirmationMessage"
+  [itemsInCartTotalSum] = "itemsInCartTotalSumInShop"
+
 >
 </app-shopping-cart>

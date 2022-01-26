@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({
@@ -6,7 +6,6 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class ShopService {
 
-  // productsInCartChanged = new EventEmitter
   productsInCart: any[] = [];
   productsInCartTotalSum: number = 0;
   amountOfProductsInCart: number = 0;
@@ -47,7 +46,7 @@ export class ShopService {
     this.updateAmountOfProductsInCart(quantity, 'add');
   }
 
-  updateAmountOfProductsInCart(quantity:number, operationType:string){
+  updateAmountOfProductsInCart(quantity:number, operationType:string) {
     if (operationType == 'add') {
       this.amountOfProductsInCart += quantity * 1;
     } else {
@@ -63,7 +62,6 @@ export class ShopService {
     this.productsInCartTotalSum = 0;
     for (let i = 0; i < this.productsInCart.length; i++  ){
       this.productsInCartTotalSum +=  this.productsInCart[i].priceSum;
-
     }
    return  this.productsInCartTotalSum
   }
@@ -84,7 +82,7 @@ export class ShopService {
     this.amountOfProductsInCart = 0;
     for(let i= 0; i < this.products.length; i++) {
         this.products[i].amount = 0;
-   }
+    }
   }
 
  products = [

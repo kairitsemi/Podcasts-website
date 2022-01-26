@@ -1,4 +1,5 @@
 import { Component,  OnInit , ElementRef } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ShopService } from '../shop.service';
 
 @Component({
@@ -13,15 +14,18 @@ export class ShopComponent implements OnInit {
   activeProductType: string = 'all';
   productsInCartAmount: number = 0;
   cartDetailedHidden = true;
-  itemsInCartTotalSum:number = 0;
+  itemsInCartTotalSumInShop: number = 0;
   defaultInputAmount: number = 0;
+  displayConfirmationMessage : boolean = false;
+
+
+  eventsSubject: Subject<void> = new Subject<void>();
 
   constructor(private shopService: ShopService, private element: ElementRef) { }
 
   ngOnInit(): void {
     this.displayedProducts = this.shopService.getProductsByType('all');
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
-    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
   }
 
   chooseProductTypeToDisplay(type:string) {
@@ -33,9 +37,10 @@ export class ShopComponent implements OnInit {
     var quantityInputElement = <HTMLInputElement>document.getElementById('quantity' + product?.id);
     var numberOfItems = Number(quantityInputElement.value);
     this.shopService.addProductsToCart(product, numberOfItems);
-    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
+    this.updateItemsInCartTotalSum();
     this.changeCartButtonColor();
     this.updateproductsInCartAmount();
+    this.displayConfirmationMessage = false;
   }
 
   changeCartButtonColor() {
@@ -49,11 +54,20 @@ export class ShopComponent implements OnInit {
 
   toggleCartDetailVisibility() {
     this.cartDetailedHidden = !this.cartDetailedHidden;
-    this.itemsInCartTotalSum= this.shopService.getProductsInCartTotalSum();
+    this.displayConfirmationMessage = false;
+  }
+
+  updateItemsInCartTotalSum() {
+    this.itemsInCartTotalSumInShop = this.shopService.getProductsInCartTotalSum();
   }
 
   updateproductsInCartAmount() {
     this.productsInCartAmount = this.shopService.amountOfProductsInCart;
   }
 
+  toggleConfirmation() {
+    this.displayConfirmationMessage = !this.displayConfirmationMessage
+  }
+
 }
+
