@@ -13,9 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { ReactiveFormsModule } from '@angular/forms';
 import { faFacebook, faSoundcloud, faSpotify} from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 

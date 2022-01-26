@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({
@@ -6,14 +6,15 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class ShopService {
 
-  productsInCartChanged = new EventEmitter
   productsInCart: any[] = [];
   productsInCartTotalSum: number = 0;
   amountOfProductsInCart: number = 0;
+  emptyArray: any[] = []
 
   constructor() {};
 
   getProductsByType(selectedType:string) {
+
     var chosenProductsByType = [];
 
     if (selectedType === 'all') {
@@ -45,7 +46,7 @@ export class ShopService {
     this.updateAmountOfProductsInCart(quantity, 'add');
   }
 
-  updateAmountOfProductsInCart(quantity:number, operationType:string){
+  updateAmountOfProductsInCart(quantity:number, operationType:string) {
     if (operationType == 'add') {
       this.amountOfProductsInCart += quantity * 1;
     } else {
@@ -59,11 +60,8 @@ export class ShopService {
 
   getProductsInCartTotalSum() {
     this.productsInCartTotalSum = 0;
-    console.log(this.productsInCartTotalSum, 'total');
     for (let i = 0; i < this.productsInCart.length; i++  ){
-      console.log(this.productsInCart[i].priceSum, 'price');
       this.productsInCartTotalSum +=  this.productsInCart[i].priceSum;
-
     }
    return  this.productsInCartTotalSum
   }
@@ -76,6 +74,15 @@ export class ShopService {
       }
     }
     this.updateAmountOfProductsInCart(amount, 'subtract');
+  }
+
+  removeItemsFromCart() {
+    this.productsInCart.length = 0;
+    this.productsInCartTotalSum = 0;
+    this.amountOfProductsInCart = 0;
+    for(let i= 0; i < this.products.length; i++) {
+        this.products[i].amount = 0;
+    }
   }
 
  products = [

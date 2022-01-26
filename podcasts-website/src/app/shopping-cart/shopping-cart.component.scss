@@ -19,9 +19,26 @@
     letter-spacing: 0.1rem;
   }
   img {
+    height: 100px;
     width: 90%;
+    object-fit: cover;
   }
   .total-sum {
     border-top: 1px solid black
   }
+}
+
+.required {
+  color: red;
+}
+
+.empty-cart {
+  color: gray;
+  h4 {
+    text-align: center;
+  }
+}
+
+.container {
+  margin: 0px;
 }
