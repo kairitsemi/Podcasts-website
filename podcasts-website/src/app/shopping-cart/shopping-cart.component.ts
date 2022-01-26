@@ -26,6 +26,7 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsInCart = this.shopService.getProductsInCartByProductandAmount();
+    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
   }
 
   closeCart() {
