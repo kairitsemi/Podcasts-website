@@ -2,11 +2,18 @@ footer {
   color: rgba(0, 0, 0, 0.7);
 }
 
-img {
+fa-icon {
   height: 1.7rem;
-  opacity: 0.7;
+  opacity: 0.6;
+  color: black;
+  padding-right: 0.5rem;
+  font-size: 1.3rem;
 }
 
-.social-icons img:hover {
+.social-icons fa-icon:hover {
   opacity: 1;
+}
+
+.email {
+  padding-right: 0.5rem;
 }
