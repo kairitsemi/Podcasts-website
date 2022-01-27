@@ -39,11 +39,10 @@ export class ContactComponent implements OnInit {
     console.log(this.contactForm.value);
     if (this.contactForm.valid) {
       this.formGroupDirective.resetForm()
+      this.showConfirmation = true;
+    } else {
+      this.showConfirmation = false;
     }
-  }
-
-  displayConfirmation() {
-    this.showConfirmation = true;
   }
 
 }

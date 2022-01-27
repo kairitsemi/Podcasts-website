@@ -63,13 +63,7 @@
             >Message is required (minimum 10 characters)</small
           >
         </div>
-        <button
-          type="submit"
-          class="btn btn-primary mt-3"
-          (click)="displayConfirmation()"
-        >
-          Send message
-        </button>
+        <button type="submit" class="btn btn-primary mt-3">Send message</button>
         <div
           *ngIf="showConfirmation"
           id="confirmationBox"
