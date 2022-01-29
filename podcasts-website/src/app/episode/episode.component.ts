@@ -19,7 +19,6 @@ export class EpisodeComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.idFromRoute = params.get('id');
-      console.log(this.idFromRoute);
       return this.idFromRoute
     })
     this.displayedEpisodes = this.podcastService.getSingleEpisode(this.idFromRoute);

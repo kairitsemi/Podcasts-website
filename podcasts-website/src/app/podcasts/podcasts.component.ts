@@ -17,6 +17,9 @@ popularEpisodes: any = [];
 genuinevideoUrlsForAllEpisodes: any = [];
 genuinevideoUrlsForLatestEpisodes: any = [];
 genuinevideoUrlsForPopularEpisodes: any = [];
+starting: number = 0;
+ending: number = 6;
+
 
 pageYoffset = 0;
 @HostListener('window:scroll', ['$event']) onScroll(): void{
@@ -27,7 +30,7 @@ pageYoffset = 0;
   constructor(private sanitizer: DomSanitizer, private podcastService: PodcastService, private scroller: ViewportScroller) { }
 
   ngOnInit(): void {
-    this.displayedEpisodes = this.podcastService.getAllEpisodesSortedById();
+    this.displayedEpisodes = this.podcastService.getAllEpisodesSortedById(this.starting, this.ending);
 
     this.latestEpisodes = this.podcastService.getLatestEpisodes(6);
 
@@ -46,6 +49,15 @@ pageYoffset = 0;
     for(let i = 0; i < this.popularEpisodes.length; i++) {
       let genuinevideoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl( this.popularEpisodes[i].src);
     this.genuinevideoUrlsForPopularEpisodes.push(genuinevideoUrl)
+    }
+  }
+
+  loadMore() {
+    this.ending = this.ending + 6;
+    this.displayedEpisodes = this.podcastService.getAllEpisodesSortedById(this.starting, this.ending);
+    for(let i = 0; i < this.displayedEpisodes.length; i++) {
+      let genuinevideoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.displayedEpisodes[i].src);
+      this.genuinevideoUrlsForAllEpisodes.push(genuinevideoUrl)
     }
   }
 

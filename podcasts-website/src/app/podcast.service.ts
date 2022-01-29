@@ -8,34 +8,34 @@ export class PodcastService {
   constructor() { }
 
 getLatestEpisodes(amountOfEpisodesToReturn: number) {
-  let myClonedArray: any [] = [];
+  let clonedArray: any [] = [];
 
-  this.episodes.forEach(val => myClonedArray.push(Object.assign({}, val)));
-  let arrangedList = myClonedArray.sort((a, b) => (a.id > b.id) ? 1 : -1)
+  this.episodes.forEach(val => clonedArray.push(Object.assign({}, val)));
+  let arrangedList = clonedArray.sort((a, b) => (a.id > b.id) ? 1 : -1)
   let latestEpisodes = arrangedList.slice(arrangedList.length - amountOfEpisodesToReturn).reverse();
 
   return latestEpisodes;
 }
 
 getPopularEpisodes() {
-  let myClonedArray: any[] = [];
+  let clonedArray: any[] = [];
 
-  this.episodes.forEach(val => myClonedArray.push(Object.assign({}, val)));
-  let popularEpisodes = myClonedArray.filter(function(episode) {
+  this.episodes.forEach(val => clonedArray.push(Object.assign({}, val)));
+  let popularEpisodes = clonedArray.filter(function(episode) {
     return [50, 55, 6, 32, 64, 10].includes(episode.id);
   })
 
   return popularEpisodes;
 }
 
-getAllEpisodesSortedById() {
-  let myClonedArray: any [] = [];
+getAllEpisodesSortedById(start: number = 0, end: number = this.episodes.length) {
+  let clonedArray: any [] = [];
 
-  this.episodes.forEach(val => myClonedArray.push(Object.assign({}, val)));
-  let arrangedList = myClonedArray.sort((a, b) => (a.id > b.id) ? 1 : -1);
+  this.episodes.forEach(val => clonedArray.push(Object.assign({}, val)));
+  let arrangedList = clonedArray.sort((a, b) => (a.id > b.id) ? 1 : -1);
   let allEpisodes = arrangedList.reverse();
 
-  return allEpisodes;
+  return allEpisodes.slice(start, end);
 }
 
 getSingleEpisode(id:number) {

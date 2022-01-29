@@ -23,6 +23,18 @@ div.episode a {
   cursor: pointer;
 }
 
+#load-more {
+  background-color: #f3f0ea;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: center;
+  border: 1px solid darkgray;
+}
+
+#load-more:hover {
+  background-color: rgb(221, 220, 220);
+}
+
 .scroll-to-top:hover {
   background-color: rgb(221, 220, 220);
 }
