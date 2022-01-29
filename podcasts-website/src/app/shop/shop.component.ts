@@ -18,9 +18,6 @@ export class ShopComponent implements OnInit {
   defaultInputAmount: number = 0;
   displayConfirmationMessage : boolean = false;
 
-
-  eventsSubject: Subject<void> = new Subject<void>();
-
   constructor(private shopService: ShopService, private element: ElementRef) { }
 
   ngOnInit(): void {
@@ -40,7 +37,7 @@ export class ShopComponent implements OnInit {
     this.updateItemsInCartTotalSum();
     this.changeCartButtonColor();
     this.updateproductsInCartAmount();
-    this.displayConfirmationMessage = false;
+    this.hideConficramtionMessage();
   }
 
   changeCartButtonColor() {
@@ -54,6 +51,10 @@ export class ShopComponent implements OnInit {
 
   toggleCartDetailVisibility() {
     this.cartDetailedHidden = !this.cartDetailedHidden;
+    this.hideConficramtionMessage()
+  }
+
+  hideConficramtionMessage() {
     this.displayConfirmationMessage = false;
   }
 

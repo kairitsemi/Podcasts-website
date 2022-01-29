@@ -35,8 +35,12 @@ export class ShoppingCartComponent implements OnInit {
 
   removeProductFromCart(productToBeRemoved:any) {
     this.shopService.removeProductFromCart(productToBeRemoved.id, productToBeRemoved.amount)
-    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
+    this.updateItemsInCartTotalSum();
     this.removeItemFromCartEvent.emit();
+  }
+
+  updateItemsInCartTotalSum() {
+    this.itemsInCartTotalSum = this.shopService.getProductsInCartTotalSum();
   }
 
   sendInvoiceAndEmptyCart() {
