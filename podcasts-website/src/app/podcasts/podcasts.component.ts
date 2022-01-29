@@ -20,8 +20,6 @@ genuinevideoUrlsForPopularEpisodes: any = [];
 newEpisodesToLoad: any = [];
 starting: number = 0;
 ending: number = 6;
-buttonState: boolean = true;
-
 
 pageYoffset = 0;
 @HostListener('window:scroll', ['$event']) onScroll(): void{
@@ -68,9 +66,5 @@ pageYoffset = 0;
 
   scrollToTop(){
     this.scroller.scrollToPosition([0,0]);
-  }
-
-  disableLoadMoreButton() {
-    this.buttonState = false;
   }
 }
