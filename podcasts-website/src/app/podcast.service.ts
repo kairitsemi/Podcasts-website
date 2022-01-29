@@ -31,7 +31,10 @@ getPopularEpisodes() {
 getAllEpisodesSortedById(start: number = 0, end: number = this.episodes.length) {
   let clonedArray: any [] = [];
 
-  this.episodes.forEach(val => clonedArray.push(Object.assign({}, val)));
+  for(let i = 0; i < this.episodes.length; i++) {
+    clonedArray.push(this.episodes[i])
+  }
+
   let arrangedList = clonedArray.sort((a, b) => (a.id > b.id) ? 1 : -1);
   let allEpisodes = arrangedList.reverse();
 
